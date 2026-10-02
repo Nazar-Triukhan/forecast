@@ -1,6 +1,28 @@
-.container{
+ .container{
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 15px;
     outline: 1px solid red;
+    box-sizing: border-box;
 }
+
+
+/* Планшет (Pad) — спрацьовує, коли екран стає меншим за 1170px */
+/* @media (max-width: 1169px) {
+    .container {
+        max-width: 664px; Контент 634px + 30px padding
+    /* } */
+/* } */ 
+
+/* Мобільні пристрої (Mobile) — спрацьовує, коли екран стає меншим за 664px */
+
+/*  @media (max-width: 663px) {
+    .container {
+        max-width: 323px; /* Контент 293px + 30px padding */
+    /* }  */
+/* } */ 
+
+
+/* 1140 desktop */
+/* 634  pad*/ 
+/* 293 mobile */ 

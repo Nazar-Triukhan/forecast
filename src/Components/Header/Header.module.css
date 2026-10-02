@@ -1,0 +1,148 @@
+.header {
+    padding: 12px 0;
+    /* position: relative;  */
+}
+
+.header > div {
+    display: flex;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    margin-left: 111px;
+
+    @media (max-width: 1169px) {
+        margin-left: 57px;
+    }
+
+    @media (max-width: 663px) {
+        display: none;
+    }
+}
+
+a {
+    color: #000;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.wrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+
+    @media (max-width: 663px) {
+        display: none;
+    }
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    min-width: 89px;
+    height: 35px;
+    padding: 0 12px; 
+    
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    background: #FFB36C;
+    font-family: "Montserrat Alternates", sans-serif;
+    
+    white-space: nowrap; 
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+}
+
+.user {
+    width: 50px;
+
+    @media (max-width: 1169px) {
+        width: 40px;
+    }
+}
+
+.hello {
+    font-family: "Montserrat Alternates", sans-serif;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.menu {
+    display: none;
+    margin-left: auto;
+    color: #000;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: 663px) {
+        display: block;
+    }
+}
+
+.menu_backdrop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    background: #E6E6E6;
+    padding: 30px 50px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+    display: flex;
+
+    /* Початковий закритий стан */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%); /* Заховано під плашку хедера */
+
+    /* Плавний перехід */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.menu_list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Стан відкриття */
+.menu_open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-420px); /* Плавно висувається донизу */
+}
+
+/* Стан закриття */
+.menu_close {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+}

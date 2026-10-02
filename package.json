@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "",
+  "homepage": "https://nazar-triukhan.github.io/forecast/",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
+    "modern-normalize": "^3.0.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

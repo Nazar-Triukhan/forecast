@@ -1,0 +1,51 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.36);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hendel__open {
+    display: flex;
+}
+
+.hendel__close{
+    display: none;
+}
+
+.modal {
+    width: clamp(15.625rem, 12.096rem + 17.65vw, 25rem);
+    height: 440px;
+    border-radius: 25px;
+    background: #FFF;
+    padding: 30px 45px;
+}
+
+input {
+border-radius: 10px;
+background: #E4E4E4;
+max-width: 310.0px;
+height: 40.0px;
+
+color: #ABABAB;
+/* font-family: Montserrat; */
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+
+}
+
+
+.from{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
