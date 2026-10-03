@@ -1,0 +1,155 @@
+.hero {
+    padding: 100px 0;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), 
+        url(../../assets/weather.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.title{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 80px;
+
+    @media(max-width: 663px) {
+        font-size: 25px;
+    }
+}
+.data_list{
+    border-left: 2px solid white;
+    margin: 0 52px;
+    height: 144px;
+
+    @media (max-width: 1169px) {
+        margin: 0 34px;
+        height: 100px;
+    }
+}
+
+.data{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+
+    @media (max-width: 1169px) {
+        font-size: 16px;
+    }
+
+
+    @media (max-width: 663px) {
+        width: clamp(16.25rem, 8.087rem + 40.82vw, 25rem);
+        text-align: left;
+   }
+
+}
+
+.text{
+        color: #FFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+
+    max-width: 300.0px;
+height: 87.0px;
+text-align: right;
+margin-left: clamp(-5rem, -3.824rem + -5.88vw, -8.125rem);
+
+    @media (max-width: 1169px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 663px) {
+        width: 100%;
+        max-width: clamp(16.25rem, 8.087rem + 40.82vw, 25rem);
+        margin: 0 auto;
+        text-align: left;
+   }
+
+}
+
+
+.wrap{
+    display: flex;
+    /* gap: 104px;  */
+    justify-content: center;
+    gap: 104px;
+    /* flex-direction: row; */
+
+        @media (max-width: 663px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+}
+
+.input {
+    margin-top: 80px;
+    display: block;
+    width: 100%;
+    max-width: clamp(12.5rem, 2.5rem + 50vw, 39.063rem);
+    padding: 14px 29px;
+    box-sizing: border-box;
+
+    border-radius: 10px 0 0 10px;
+    background: #D9D9D9;
+    border: none;
+    outline: none;
+
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    
+    flex-shrink: 0; 
+    margin: 80px 0 0 auto;
+
+    @media (max-width: 1169px) {
+        /* max-width: 402px; */
+    }
+    @media (max-width: 663px) {
+        /* max-width: 200px; */
+    }
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.search{
+    border-radius: 0 10px 10px 0;
+border-left: 2px solid #000;
+background: #FFB36C;
+width: 45.0px;
+height: 40.0px;
+margin-top: 80px;
+margin-right: auto;
+flex-shrink: 0;
+
+
+}
+
+
+.data_sub {
+    font-size: 12px;
+    vertical-align:top;
+    position: absolute;
+    /* top: -4px; */
+    left: 120px;
+}
+
+.icon{
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+}
+

@@ -4,6 +4,8 @@ import Header from './Components/Header/Header.jsx'
 import Hero from './Components/Hero/Hero.jsx'
 import Modal from './Components/Modal/Modal'
 import Footer from './Components/Footer/Footer'
+import Slider from './Components/Slider/Slider'
+import News from './Components/News/News'
 
 function App() {
 
@@ -15,7 +17,6 @@ function App() {
     }
 
     function closeModal () {
-      console.log('sdfghjkl;')
       setModal(false)
     }
 
@@ -23,15 +24,15 @@ function App() {
       setName(name)
     }
 
-
-
-
   return (
     <>
     <Modal modal={modal} closeModal={closeModal} userName={userName}/>
     <Header openModal={openModal} name={name}/>
     <Hero />
+    <News /> 
+    <Slider />
     <Footer />
+
 
 
     

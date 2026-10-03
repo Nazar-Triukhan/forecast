@@ -1,6 +1,7 @@
 .header {
     padding: 12px 0;
-    /* position: relative;  */
+    position: relative; /* Обов'язково для позиціонування меню відносно хедера */
+    z-index: 10;        /* Гарантує, що хедер знаходиться поверх випадаючого меню */
 }
 
 .header > div {
@@ -93,13 +94,17 @@ a {
     cursor: pointer;
 
     @media (max-width: 663px) {
-        display: block;
+        display: inline-flex;
+        align-items: center;  
+        justify-content: center; 
+        gap: 8px;   
+        white-space: nowrap;  
     }
 }
 
 .menu_backdrop {
     position: absolute;
-    top: 100%;
+    top: 100%; /* Меню починається чітко під хедером */
     left: 0;
     margin: 0;
     width: 100%;
@@ -110,11 +115,12 @@ a {
     box-sizing: border-box;
 
     display: flex;
+    z-index: 9; /* Залишається шар за шаром нижче за хедер */
 
     /* Початковий закритий стан */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(100%); /* Заховано під плашку хедера */
+    transform: translateY(-15px);
 
     /* Плавний перехід */
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
@@ -133,16 +139,28 @@ a {
     align-items: center;
 }
 
-/* Стан відкриття */
+/* Стан ВІДКРИТО: опускається рівно під хедер */
 .menu_open {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-420px); /* Плавно висувається донизу */
+    transform: translateY(0);
 }
 
-/* Стан закриття */
+/* Стан ЗАКРИТО */
 .menu_close {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-100%);
+    transform: translateY(-15px);
+}
+
+.arrow {
+    margin-top: 3px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.arrow_open {
+    margin-top: 3px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
 }

@@ -22,7 +22,7 @@
 
 .modal {
     width: clamp(15.625rem, 12.096rem + 17.65vw, 25rem);
-    height: 440px;
+
     border-radius: 25px;
     background: #FFF;
     padding: 30px 45px;
@@ -40,12 +40,50 @@ font-size: 12px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-
+padding: 12px 0 12px 20px;
+margin-top: 10px;
 }
 
 
 .from{
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    /* gap: 25px; */
+}
+
+.title{
+    color: #000;
+font-family: "Montserrat Alternates";
+font-size: 20px;
+font-weight: 500;
+
+display: flex;
+justify-content: center;
+margin-bottom: 17px;
+
+}
+
+.text{
+    color: #000;
+font-family: Montserrat;
+font-size: 12px;
+font-weight: 500;
+margin-top: 25px;
+
+}
+
+.btn{
+    width: 107px;
+    margin: 0 auto;
+padding: 10px 30px;
+gap: 10px;
+border-radius: 10px;
+background: #FFB36C;
+
+color: #000;
+font-family: Montserrat;
+font-size: 12px;
+font-weight: 400;
+margin-top: 25px;
+
 }

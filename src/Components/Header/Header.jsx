@@ -3,6 +3,7 @@ import Container from "../container/Container"
 import style from './Header.module.css'
 import logo from '../../assets/logo.svg'
 import user from '../../assets/user.png'
+import { IoIosArrowForward } from "react-icons/io";
 
 
 function Header ({openModal, name}) {
@@ -45,7 +46,7 @@ function Header ({openModal, name}) {
                     </div>
                 }
 
-                <button type="button" className={style.menu} onClick={hendelMenu}>menu</button>
+                <button type="button" className={style.menu} onClick={hendelMenu}>menu<IoIosArrowForward className={menu ? style.arrow_open : style.arrow}/></button>
                
             </Container>
  <div className={ `${menu ? style.menu_open: style.menu_close} ${style.menu_backdrop} `}>

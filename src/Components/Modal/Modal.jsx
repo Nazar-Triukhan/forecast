@@ -36,13 +36,13 @@ function Modal({modal, closeModal, userName}) {
             <div className={style.modal}>
                 <h2 className={style.title}>Sign up</h2>
                 <form className={style.from} onSubmit={hendelForm}>
-                    <label>Username</label>
-                    <input type="text" name='username' placeholder='Username'/>
-                    <label>E-Mail</label>
+                    <label className={style.text}>Username</label>
+                    <input type="text" name='username' placeholder='Username' minLength={2}/>
+                    <label className={style.text}>E-Mail</label>
                     <input type="email" name="email" placeholder='E-Mail'/>
-                    <label>Password</label>
-                    <input type="password" name="password"  placeholder='Password' />
-                    <button type="submit">Sign up</button>
+                    <label className={style.text}>Password</label>
+                    <input type="password" name="password"  placeholder='Password' minLength={6}/>
+                    <button className={style.btn} type="submit">Sign up</button>
                 </form>
             </div>
         </div>
