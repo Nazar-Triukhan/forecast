@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import './App.css'
 import Header from './Components/Header/Header.jsx'
 import Hero from './Components/Hero/Hero.jsx'
@@ -6,8 +6,12 @@ import Modal from './Components/Modal/Modal'
 import Footer from './Components/Footer/Footer'
 import Slider from './Components/Slider/Slider'
 import News from './Components/News/News'
+import Favorites from './Components/Favorites/Favorites'
+import { WeatherContext } from './WeatherContext'
 
 function App() {
+
+    const {carts} = useContext(WeatherContext)
 
     const [modal, setModal] = useState(false)
     const [name , setName] = useState('')
@@ -29,6 +33,7 @@ function App() {
     <Modal modal={modal} closeModal={closeModal} userName={userName}/>
     <Header openModal={openModal} name={name}/>
     <Hero />
+    {carts.length >= 1? <Favorites />: ''}
     <News /> 
     <Slider />
     <Footer />

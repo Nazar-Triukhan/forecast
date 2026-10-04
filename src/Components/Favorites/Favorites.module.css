@@ -1,0 +1,111 @@
+.Favorites{
+    padding: 60px 0 80px 0;
+}
+
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 90px;
+}
+
+.item{
+    width: 320.0px;
+    height: 430.0px;
+    border-radius: 20px;
+    background: #E8E8E8;
+    padding: 15px 20px 20px;
+
+}
+
+.they_elem{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.btn{
+padding: 8px 18px;
+border-radius: 10px;
+background: #FFB36C;
+
+width: 117.0px;
+height: 28.0px;
+
+font-size: 10px;
+
+
+}
+
+.title{
+    color: #000;
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 500;
+display: flex;
+justify-content: center;
+
+}
+
+.icon{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.list_name{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.list_btn{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 10px 0 15px 0;
+}
+
+.list_day{
+    display: flex;
+    gap: 26px;
+    margin-bottom: 22px;
+    justify-content: center;    
+}
+
+.celius{
+    color: #000;
+font-family: Montserrat;
+font-size: 32px;
+font-weight: 500;
+
+display: flex;
+justify-content: center;
+
+}
+
+.list_btn_menu{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   margin-top: 39px;
+
+}
+
+.btn_more{
+    margin: 0 28px;
+}
+
+.icon_menu{
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+}
+
+.icon_menu:first-child{
+    margin-right: 16px;
+}
