@@ -1,0 +1,20 @@
+.box{
+    position: relative;
+    width: 100%;
+    height: clamp(400px, 35vw, 554px);
+    max-height: 554px;
+    background-color: #E8E8E8;
+    border-radius: 20px;
+    padding: 26px 40px 40px ;
+    box-sizing: border-box;
+}
+
+.title{
+    color: #1E1E1E;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin: 0 0 15px 15px;
+}

@@ -134,7 +134,8 @@ a {
 
 .menu_wrap {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     gap: 15px;
     align-items: center;
 }

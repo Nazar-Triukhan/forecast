@@ -56,10 +56,12 @@ function Header ({openModal, name}) {
                     <li><a href="#">Menu</a></li>
                 </ul>
 
-                  <div className={style.menu_wrap}>
+                  {
+                     name ? <p className={style.hello}>Hello , {name}</p>: <div className={style.menu_wrap}>
+                    <button className={style.button} type="button" onClick={openModal}>Sign Up</button>
                     <img src={user} alt="" className={style.user}/>
-                    <button className={style.button} type="button" onClick={clickMenu}>Sign Up</button>
-                  </div>
+                    </div>
+                  }
                 </div>
 
     </header>

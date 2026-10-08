@@ -8,10 +8,12 @@ import Slider from './Components/Slider/Slider'
 import News from './Components/News/News'
 import Favorites from './Components/Favorites/Favorites'
 import { WeatherContext } from './WeatherContext'
+import WeatherDetails from './Components/WeatherDetails/WeatherDetails'
+import WeatherTable from './Components/WeatherTable/WeatherTable'
 
 function App() {
 
-    const {carts} = useContext(WeatherContext)
+    const {carts, details, cityTable} = useContext(WeatherContext)
 
     const [modal, setModal] = useState(false)
     const [name , setName] = useState('')
@@ -34,6 +36,8 @@ function App() {
     <Header openModal={openModal} name={name}/>
     <Hero />
     {carts.length >= 1? <Favorites />: ''}
+    {details && carts.length > 0? <WeatherDetails /> : null}
+    {cityTable && carts.length > 0? <WeatherTable />: null}
     <News /> 
     <Slider />
     <Footer />

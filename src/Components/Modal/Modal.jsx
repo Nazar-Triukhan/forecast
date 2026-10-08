@@ -1,5 +1,7 @@
 import style from './Modal.module.css'
+import { createPortal } from 'react-dom'
 
+const rootModal = document.getElementById('modal-root')
 
 function Modal({modal, closeModal, userName}) {
 
@@ -32,7 +34,8 @@ function Modal({modal, closeModal, userName}) {
         }
 
     return (
-        <div className={`${style.backdrop} ${modal ? style.hendel__open : style.hendel__close}`} onClick={ hendelModal}>
+        createPortal(
+ <div className={`${style.backdrop} ${modal ? style.hendel__open : style.hendel__close}`} onClick={ hendelModal}>
             <div className={style.modal}>
                 <h2 className={style.title}>Sign up</h2>
                 <form className={style.from} onSubmit={hendelForm}>
@@ -45,7 +48,10 @@ function Modal({modal, closeModal, userName}) {
                     <button className={style.btn} type="submit">Sign up</button>
                 </form>
             </div>
-        </div>
+        </div>, 
+        rootModal
+        )
+       
     )
 }
 
