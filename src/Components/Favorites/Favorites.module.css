@@ -76,6 +76,7 @@ justify-content: center;
     display: flex;
     justify-content: center;
     gap: 25px;
+    margin-top: 10px;
     /* margin: 10px 0 15px 0; */
 }
 

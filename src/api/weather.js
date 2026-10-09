@@ -11,3 +11,11 @@ export const  apiDetailsWeather = (city) =>  {
 export const apiTableWeather = (city) => {
     return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`).then(res => res.json())
 }
+
+// export const apiDays  = (city) =>  {
+//     return fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`).then(res => res.json())
+// }
+
+// export const apiDaysFull = (lat, lon) => {
+//     return fetch( `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&forecast_days=8&timezone=auto`).then(res => res.json())
+// }

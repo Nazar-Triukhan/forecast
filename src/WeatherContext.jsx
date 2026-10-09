@@ -10,6 +10,10 @@ function WeatherProvider({ children }) {
   const [error, setError] = useState(false);
   const [details, setDetails] = useState(null)
   const [cityTable, setCityTable] = useState('')
+  const [cityDays, setCityDays] = useState(null)
+
+
+  // localStorage.setItem('carts', JSON.stringify(carts)) 
 
 
 
@@ -105,14 +109,23 @@ function WeatherProvider({ children }) {
     setCityTable(city)
   }
 
-  
+
+  function hendelDays (city) {
+    setCityDays(city)
+  }
+
+  function hendelNull () {
+    setDetails(null)
+    setCityTable(null)
+    setCityDays(null)
+  }
 
 
 
 
 
   return (
-    <WeatherContext.Provider value={{ inputText, carts, hendelDelete , hendelDetails, details, hendelTable , cityTable}}>
+    <WeatherContext.Provider value={{ inputText, carts, hendelDelete , hendelDetails, details, hendelTable , cityTable, hendelDays, cityDays,  hendelNull}}>
       {children}
     </WeatherContext.Provider>
   );

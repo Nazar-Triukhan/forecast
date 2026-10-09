@@ -20,7 +20,7 @@ function Favorites() {
         }
     }
 
-    const {carts, hendelDelete, updateWeather, hendelDetails, hendelTable} = useContext(WeatherContext)
+    const {carts, hendelDelete, updateWeather, hendelDetails, hendelTable, hendelDays} = useContext(WeatherContext)
 
     // console.log(carts)
 
@@ -65,7 +65,7 @@ const scrollTo = (id) => {
                                     <h3 className={style.title}>{hours}:{minutes}</h3>
                                     <ul className={style.list_btn}>
                                         <li><button className={`${style.they_elem} ${style.btn}`} type="button" onClick={() => {hendelTable(cityName), scrollTo('table')}}>Hourly forecast</button></li>
-                                        <li><button className={`${style.they_elem} ${style.btn}`} type="button">Weekly forecast</button></li>
+                                        <li><button className={`${style.they_elem} ${style.btn}`} type="button" onClick={() => {hendelDays(cityName), scrollTo('info_days')}}>Weekly forecast</button></li>
                                     </ul>
                                     
                                     <div className={style.list_day}>
