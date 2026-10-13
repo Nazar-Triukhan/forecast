@@ -5,15 +5,35 @@ export const WeatherContext = createContext(null);
 
 function WeatherProvider({ children }) {
   const [text, setText] = useState("");
-  const [carts, setCarts] = useState([]);
+  const [carts, setCarts] = useState(() => {
+    const saveCarts = window.localStorage.getItem('carts')
+
+    if(saveCarts) {
+      return JSON.parse(saveCarts)
+    }  else {
+      return []
+    }
+  });
   const [city, setCity] = useState(null);
   const [error, setError] = useState(false);
   const [details, setDetails] = useState(null)
   const [cityTable, setCityTable] = useState('')
   const [cityDays, setCityDays] = useState(null)
+  const [favorite, setFavorite] = useState([])
 
+ function hendelFavorite(cityNameLike) {
+  const favoriteArr = carts.filter(
+    item => item.cityName === cityNameLike
+  );
 
-  // localStorage.setItem('carts', JSON.stringify(carts)) 
+  setFavorite(prev => {
+    if (prev.some(item => item.cityName === cityNameLike)) {
+      return prev;
+    }
+
+    return [...prev, ...favoriteArr];
+  });
+}
 
 
 
@@ -41,6 +61,10 @@ function WeatherProvider({ children }) {
     }
   }, [text]);
 
+  useEffect(() => {
+    window.localStorage.setItem('carts', JSON.stringify(carts)) 
+  }, [carts])
+
   function hendelDelete(e) {
     setCarts(carts.filter((item) => item.id !== e.currentTarget.id));
   }
@@ -67,6 +91,7 @@ function WeatherProvider({ children }) {
     const iconCode = city.weather[0].icon;
 
     const id = cityName 
+
 
     return {
       cityName,
@@ -125,7 +150,7 @@ function WeatherProvider({ children }) {
 
 
   return (
-    <WeatherContext.Provider value={{ inputText, carts, hendelDelete , hendelDetails, details, hendelTable , cityTable, hendelDays, cityDays,  hendelNull}}>
+    <WeatherContext.Provider value={{ inputText, carts, hendelDelete , hendelDetails, details, hendelTable , cityTable, hendelDays, cityDays,  hendelNull, hendelFavorite}}>
       {children}
     </WeatherContext.Provider>
   );

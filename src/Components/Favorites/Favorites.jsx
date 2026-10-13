@@ -10,19 +10,23 @@ import style from './Favorites.module.css'
 import { apiDetailsWeather } from "../../api/weather";
 
 function Favorites() {
-    const [like, setLike] = useState(false)
 
-    function hendelLike () {
-        if(like) {
-            setLike(false)
-        } else {
-            setLike(true)
-        }
-    }
 
-    const {carts, hendelDelete, updateWeather, hendelDetails, hendelTable, hendelDays} = useContext(WeatherContext)
+const [like, setLike] = useState([]);
 
-    // console.log(carts)
+function hendelLike(id) {
+    hendelFavorite(id);
+
+    setLike(prev =>
+        prev.includes(id)
+            ? prev.filter(item => item !== id)
+            : [...prev, id]
+    );
+}
+
+
+
+    const {carts, hendelDelete, updateWeather, hendelDetails, hendelTable, hendelDays, hendelFavorite} = useContext(WeatherContext)
 
     async function hendelGetDetails (city) {
         const response = await apiDetailsWeather(city)
@@ -77,14 +81,10 @@ const scrollTo = (id) => {
                                     <h3 className={style.celius}>{celius}C</h3>
                                     <ul className={style.list_btn_menu}>
                                         <li><button className={style.they_elem} type="button" ><GrPowerReset className={style.icon_menu}/></button></li>
-                                        <li><button className={style.they_elem} type="button" onClick={hendelLike}>{like ?  <FcLike className={style.icon_menu}/>: <img src={heart} alt="" className={style.icon_menu}/>}</button></li>
+                                        <li><button className={style.they_elem} type="button" onClick={() => hendelLike(id)}>{like.includes(id)  ?  <FcLike className={style.icon_menu}/>: <img src={heart} alt="" className={style.icon_menu}/>}</button></li>
                                         <li><button className={`${style.they_elem} ${style.btn} ${style.btn_more}`} type="button" onClick={() => hendelGetDetails(cityName)}>See more</button></li>
                                         <li><button className={style.they_elem} type="button" id={id} onClick={(e) => hendelDelete(e)}><FaRegTrashAlt className={style.icon_menu}/></button></li>
                                     </ul>
-                                    
-                                    
-                                    
-                                    
                                 </li>
                             )
                         })
